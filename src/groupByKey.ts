@@ -7,9 +7,9 @@ export function groupByKey<T>(items: T[], key: keyof T): GroupsMap<T> {
 
   for (const item of items) {
     if (result.hasOwnProperty(item[key] as string)) {
-      result[item[key] as string].push(item);
+      result[String(item[key])].push(item);
     } else {
-      result[item[key] as string] = [item];
+      result[String(item[key])] = [item];
     }
   }
 
